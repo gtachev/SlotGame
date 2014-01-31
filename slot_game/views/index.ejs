@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="container">
+        <div id="navigation">
+            <p>GT games</p>
+            <%if (isLogged) { %>
+                <a href="/logout">Logout</a>
+                <a href="/profile">My profile[<%= username %>]</a>
+                <a href="/game">Play</a>
+            <% } else{ %>
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            <% } %>
+        </div>
+        
+        <div id="newsContainer">
+            <% for(var i=0; i<news.length; i++) {%>
+               <p class="news"><%= news[i].text %></p>
+            <% } %>
+        </div>
+
+    </div>
+  </body>
+</html>

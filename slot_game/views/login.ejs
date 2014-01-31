@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="container">
+        <div id="navigation">
+            <p>GT games</p>
+            <a href="/register">Register</a>
+            <a href="/">Home</a>
+        </div>
+        <form id="loginForm" action="login" method="post">
+            <p class="error"><%= error %></p>
+            <div>Username:<input type="text" name="username" /></div><br />
+            <div>Password:<input type="password" name="password" /></div><br />
+            <div><input type="submit" value="Login"></div>
+        </form>
+    </div>
+    
+  </body>
+</html>

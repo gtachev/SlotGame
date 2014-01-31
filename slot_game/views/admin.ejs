@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery.min.js" ></script>
+    <script src="/javascripts/general.js" ></script>
+  </head>
+  <body>
+    <div id="container">
+        <div id="navigation">
+            <p>GT games</p>
+              <a href="/logout">Logout</a>
+              <a href="/profile">My profile[<%= username %>]</a>
+              <a href="/game">Play</a>
+              <a href="/">Home</a>
+        </div>
+        
+        <form id="adminNewsForm" action="admin" method="post">
+            <% for(var i=0; i<news.length; i++) {%>
+              <div class="adminNewsContainer">
+               <textarea name='news[]'><%= news[i].text %></textarea>
+               <p class="delNews">x</p>
+             </div>
+            <% } %>
+            <p class="addNews">add news</p><br />
+            <input type="submit" value="Submit news">
+        </form>
+
+    </div>
+  </body>
+</html>

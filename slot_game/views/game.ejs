@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery.min.js" ></script>
+    <script src="/javascripts/game.js" ></script>
+  </head>
+  <body>
+    <div id="container">
+        <div id="navigation">
+            <p>GT games</p>
+            <a href="/logout">Logout</a>
+            <a href="/profile">My profile[<%= username %>]</a>
+            <a href="/">Home</a>
+        </div>
+        <div id="gameHolder">
+            <input type="hidden" value="<%= token %>" id="token" />
+            <div id="infoPanelTop">
+                <div id="infoBalance"><p>Balance: <span><%= chips %></span></p></div>
+                <div id="infoTitle"><p>Slot game</p></div>
+            </div>
+
+            <div id="rillsHolder">
+                <div class="rillHolder">
+                    <div class="rillSider">
+                        <!--<div class="itemBox">1</div>-->
+                    </div>
+                </div>
+                <div class="rillHolder"><div class="rillSider"></div></div>
+                <div class="rillHolder"><div class="rillSider"></div></div>
+                <div class="rillHolder"><div class="rillSider"></div></div>
+                <div class="rillHolder"><div class="rillSider"></div></div>
+            </div>
+
+            <div id="infoPanelBottom">
+                <p id="betInfo">Total stake: <span></span></p>
+                <p id="additionalInfoBottom">Welcome to slot game</p>
+            </div>
+        </div>
+        <div id="buttonsHolder">
+            <div class="button" id="btnStakeDown"><p>Stake down</p></div>
+            <div class="button" id="btnStakeUp"><p>Stake up</p></div>
+            <div class="button" id="btnSpinAuto"><p>Auto<span></span></p></div>
+            <div class="button" id="btnSpin"><p>Spin</p></div>
+        </div>
+
+        
+    </div>
+  </body>
+</html>

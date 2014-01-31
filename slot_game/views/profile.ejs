@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div id="container">
+        <div id="navigation">
+            <p>GT games</p>
+            <a href="/logout">Logout</a>
+            <a href="/game">Play</a>
+            <a href="/">Home</a>
+        </div>
+
+        <div id="profileHolder">
+          <p style="font-size:18px;">Hello, <%= statisticsData.username %></p>
+          <p>Chips: <%= statisticsData.current_chips %></p>
+          <p>Total Bet: <%= statisticsData.bet === null ? "No data" : statisticsData.bet %></p>
+          <p>Total Win: <%= statisticsData.win === null ? "No data" : statisticsData.win %></p>
+          <p>Return to player (RTP): <%= (statisticsData.win === null || statisticsData.bet === null) ? "No data" : (statisticsData.win/statisticsData.bet * 100) + " %" %></p>
+          <p>Number of bets: <%= statisticsData.number_bets %></p>
+          <p>First: <%= statisticsData.first_game === null ? "No data" : statisticsData.first_game.toDateString() %></p>
+          <p>Last: <%= statisticsData.last_game === null ? "No data" : statisticsData.last_game.toDateString() %></p>
+          <a href="/changepass">Change pass</a>
+          <form action="profile" method="post">
+              <input name="token" type="hidden" value="<%= token %>" />
+              <input type="submit" value="Reset chips" />
+          </form>
+        </div>
+        
+        
+        
+    </div>
+  </body>
+</html>

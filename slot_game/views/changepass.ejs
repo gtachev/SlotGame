@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery.min.js" ></script>
+    <script src="/javascripts/general.js" ></script>
+  </head>
+  <body>
+    <div id="container">
+        <div id="navigation">
+            <p>GT games</p>
+            <a href="/logout">Logout</a>
+            <a href="/profile">My profile[<%= username %>]</a>
+            <a href="/game">Play</a>
+            <a href="/">Home</a>
+        </div>
+
+        <form id="changePassForm" action="changepass" method="post">
+            <p class="error"><%= msg %></p>
+            <div>Current password:<input type="password" name="oldPass" /></div><br />
+            <div>New password:<input id="pass1" type="password" name="newPass" /></div><br />
+            <div>Repeat New password:<input id="pass2" type="password" /></div><br />
+            <div><input id="changePassBtn" type="submit" value="Change password"></div>
+        </form>
+        
+        
+    </div>
+  </body>
+</html>

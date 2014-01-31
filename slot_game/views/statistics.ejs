@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="/javascripts/jquery.min.js" ></script>
+    <script src="/javascripts/general.js" ></script>
+  </head>
+  <body>
+    <div id="container">
+        <div id="navigation">
+            <p>GT games</p>
+              <a href="/logout">Logout</a>
+              <a href="/profile">My profile[<%= username %>]</a>
+              <a href="/game">Play</a>
+              <a href="/">Home</a>
+        </div>
+        
+        <div id="statisticsHolder">
+          <% for(var i=0; i<statistics.length; i++) {%>
+            <div>
+              <p>User: <%= statistics[i].username %></p>
+              <p>Chips: <%= statistics[i].current_chips %></p>
+              <p>Total Bet: <%= statistics[i].bet %></p>
+              <p>Total Win: <%= statistics[i].win %></p>
+              <p style="width:150px;">Return to player (RTP): <%= (statistics[i].win/statistics[i].bet * 100) + " %" %></p>
+              <p>Number of bets: <%= statistics[i].number_bets %></p>
+              <p>First: <%= statistics[i].first_game.toDateString() %></p>
+              <p>Last: <%= statistics[i].last_game.toDateString() %></p>
+            </div>
+          <% } %>
+        </div>
+        
+
+    </div>
+  </body>
+</html>
